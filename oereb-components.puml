@@ -1,0 +1,7 @@
+@startuml oereb-kataster
+component "oereb-web-service" as webservice
+component "oereb-wms" as wms
+database "oereb-db" as db
+webservice --> db : use
+wms --> db : use
+@enduml
