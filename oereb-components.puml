@@ -1,7 +1,14 @@
 @startuml oereb-kataster
+() "HTTP" as wsinterface
+() "HTTP" as wmsinterface
 component "oereb-web-service" as webservice
 component "oereb-wms" as wms
 database "oereb-db" as db
-webservice --> db : use
-wms --> db : use
+
+webservice-->db : use
+wms--> db : use
+webservice->wms : use
+
+wsinterface-webservice
+wms-wmsinterface
 @enduml
